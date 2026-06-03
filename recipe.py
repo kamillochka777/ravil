@@ -10,4 +10,7 @@ class Recipe():
                 ingr.quantity = ingr.quantity + ingredient.quantity
                 return
             self._ingredients.append(ingredient)
+    @staticmethod
+    def is_valid_ratio(ratio):
+        return isinstance(ratio, (int, float)) and ratio > 0:
     
