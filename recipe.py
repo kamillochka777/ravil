@@ -19,3 +19,6 @@ class Recipe():
             sc_quantity = ingr.quantity * ratio
             scaled.append(Ingredient(ingr.name, sc_quantity, ingr.unit))
         return Recipe(self.title, scaled)
+    def __len__(self):
+        return len(self._ingredients)
+    
