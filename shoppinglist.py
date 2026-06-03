@@ -23,4 +23,10 @@ class ShoppingList():
             spisok.append(Ingredient(name_1, quantity, unit))
         spisok.sort(key = lambda i: i.name)
         return spisok
-        
+    def __add__(self, other):
+        new_spisok = ShoppingList()
+        for ingredient, title in self._items:
+            new_spisok._items.append((ingredient, title))
+        for ingredient, title in other._item:
+            new_spisok._items.append((ingredient, title))
+        return new_spisok
