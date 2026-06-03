@@ -21,4 +21,11 @@ class Recipe():
         return Recipe(self.title, scaled)
     def __len__(self):
         return len(self._ingredients)
-    
+    def __str__(self):
+        chitaemo = f'Блюдо: {self.title}\nИнгредиенты:'
+        for ingr in self._ingredients:
+            if ingr == self._ingredients[-1]:
+                chitaemo += f' {ingr}'
+            else:
+                chitaemo += f' {ingr};'
+        return chitaemo
