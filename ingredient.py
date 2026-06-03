@@ -16,4 +16,6 @@ class Ingredient:
         return f'{self.name.capitalize()}: {self.quantity} {self.unit}'
     def __repr__(self):
         return f"Ingredient('{self.name.capitalize()}', {self.quantity}, '{self.unit}')"
+    def __eq__(self, ingredient2):
+        return self.name == ingredient2.name and self.unit == ingredient2.unit
     
