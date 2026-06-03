@@ -13,4 +13,9 @@ class Recipe():
     @staticmethod
     def is_valid_ratio(ratio):
         return isinstance(ratio, (int, float)) and ratio > 0:
-    
+    def scale(self, ratio: ratio):
+        scaled = []
+        for ingr in self._ingredients:
+            sc_quantity = ingr.quantity * ratio
+            scaled.append(Ingredient(ingr.name, sc_quantity, ingr.unit))
+        return Recipe(self.title, scaled)
