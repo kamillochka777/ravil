@@ -9,4 +9,18 @@ class ShoppingList():
             self._items.append((ingredient, recipe.title))
     def remove_recipe(self, title: str):
         self._items = [item for item in self._items if item[1] != title]
+    def get_list(self):
+        itog = {}
+        for ingredient, title in self._items:
+            key = (ingredient.name, ingredient.unit)
+            if key in itog:
+                itog[key] += ingredient.quantity
+            else:
+                itog[key] = ingredient.quantity
+        spisok = []
+        for (name, unit), quantity in itog.items():
+            name_1 = name
+            spisok.append(Ingredient(name_1, quantity, unit))
+        spisok.sort(key = lambda i: i.name)
+        return spisok
         
