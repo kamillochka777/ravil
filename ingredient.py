@@ -12,4 +12,6 @@ class Ingredient:
         if f_quantity <= 0:
             raise ValueError('Колтчество должно быть положительным')
         self._quantity = f_quantity
-        
+    def __str__(self):
+        return f'{self.name.capitalize()}: {self.quantity} {self.unit}'
+    
