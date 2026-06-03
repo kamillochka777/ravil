@@ -14,4 +14,6 @@ class Ingredient:
         self._quantity = f_quantity
     def __str__(self):
         return f'{self.name.capitalize()}: {self.quantity} {self.unit}'
+    def __repr__(self):
+        return f"Ingredient('{self.name.capitalize()}', {self.quantity}, '{self.unit}')"
     
