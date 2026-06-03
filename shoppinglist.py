@@ -7,4 +7,6 @@ class ShoppingList():
         sc_recipe = recipe.scale(portions)
         for ingredient in sc_recipe._ingredients:
             self._items.append((ingredient, recipe.title))
+    def remove_recipe(self, title: str):
+        self._items = [item for item in self._items if item[1] != title]
         
