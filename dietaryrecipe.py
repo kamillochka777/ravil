@@ -5,4 +5,6 @@ class DietaryRecipe(Recipe):
     def scale(self, ratio: float):
         scaled = super().scale(ratio)
         return DietaryRecipe(scaled.title, self.diet_type, scaled._ingredients)
+    def __str__(self):
+        return f'[{self.diet_type}] {self.title}'
     
